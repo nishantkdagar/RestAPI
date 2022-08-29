@@ -1,12 +1,13 @@
 package com.example.restapiapp.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value={"/home","/",""},method = RequestMethod.GET)
 public class RestApiControl {
-    @RequestMapping("/home")
-    public String index(){
-        return "<h2>Hello, this is Nishant from BridgeLabz!</h2>";
+    @GetMapping("/any")
+    public String getUsers(@RequestParam(value = "name", defaultValue = "Nishant") String name)
+    {
+        return "Hello! " + name + " welcome to BridgeLabz!!";
     }
 }
