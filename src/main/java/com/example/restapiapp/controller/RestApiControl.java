@@ -10,4 +10,8 @@ public class RestApiControl {
     {
         return "Hello! " + name + " welcome to BridgeLabz!!";
     }
+    @RequestMapping(value = {"/any/{age}"},method = RequestMethod.GET)
+    public String getAge(@PathVariable String age){
+        return "<h1>You are "+age+" years old.</h1>";
+    }
 }
